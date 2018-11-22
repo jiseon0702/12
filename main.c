@@ -16,6 +16,7 @@ int main(int argc, char *argv[]) {
 	
 	
 	printf(" %s의 개수는!!! : %i \n",src,j);
-	
+	printf("%i", strlen(src));
+	//strcpy(dst,src);
 	return 0;
 }
