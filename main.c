@@ -4,19 +4,19 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	char src[100]="Programming course";
-
-	int j;
+	FILE *fp=NULL;
 	
-	while ( src[j]!='\0')
+	fp=fopen("sample.txt","w");
+	int i;
+	char input[100];
+	for (i=0;i<3;i++)
 	{
-		j++;
+		printf("in put a word : ");
+		scanf("%s",input);
+		fprintf(fp, "%s\n", input);
 	}
-
 	
+	fclose(fp);
 	
-	printf(" %s의 개수는!!! : %i \n",src,j);
-	printf("%i", strlen(src));
-	//strcpy(dst,src);
 	return 0;
 }
