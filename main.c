@@ -5,19 +5,17 @@
 
 int main(int argc, char *argv[]) {
 	char src[100]="Programming course";
-	char dst[100];
-	
+
 	int j;
 	
 	while ( src[j]!='\0')
 	{
-		dst[j]=src[j];
 		j++;
 	}
-	dst[j]='\0';
+
 	
 	
-	printf("%s \n",dst);
+	printf(" %s의 개수는!!! : %i \n",src,j);
 	
 	return 0;
 }
