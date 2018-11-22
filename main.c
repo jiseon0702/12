@@ -5,30 +5,37 @@
 
 int main(int argc, char *argv[]) {
 	FILE *fp;
-	FILE *fc;
-	char input;
+
+	char input[100];
 	int i=0;
 	char original[100];
-	char copy[100];
+	char find_word[100];
+	int length;
 	
 	printf("original file : ");
 	scanf("%s",original);
-	printf(" copy file : ");
-	scanf("%s",copy);
+	printf(" word to find : ");
+	scanf("%s",find_word);
 	
 	fp=fopen(original,"r");
-	fc=fopen(copy,"w");
+
 	
-	while ((input=fgetc(fp)) !=EOF)
+	while (fgets(input,100,fp) !=NULL)
 	{
-		fputc(input,fc);
-		i++;
+		if(strncmp(input,find_word,strlen(find_word))==0)
+		{
+			printf("find a word : %s \n",input);
+		 } 
+
 	}
-	printf("Copy succeed %i byte  copied",i);
+
+	printf(" \n Search done!");
+	
+
 
 	
 	fclose(fp);
-	fclose(fc);
+
 	
 	return 0;
 }
