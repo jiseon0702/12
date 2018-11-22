@@ -4,17 +4,17 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	FILE *fp=NULL;
+	FILE *fp;
+	char input;
 	
-	fp=fopen("sample.txt","w");
-	int i;
-	char input[100];
-	for (i=0;i<3;i++)
+	fp=fopen("sample.txt","r");
+
+	
+	while ( (input = fgetc(fp)) !=EOF)
 	{
-		printf("in put a word : ");
-		scanf("%s",input);
-		fprintf(fp, "%s\n", input);
+		putchar(input);
 	}
+	
 	
 	fclose(fp);
 	
